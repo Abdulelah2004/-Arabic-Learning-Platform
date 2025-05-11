@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ِArabicMaster Pro | Interactive Arabic Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <i class="fas fa-language"></i>
+                <span>Abdulelah Arabic Pro</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#lessons">Lessons</a></li>
+                    <li><a href="#flashcards">Flashcards</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#writing">Writing</a></li>
+                    <li><a href="#progress">Progress</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Master Arabic with Interactive Learning</h1>
+            <p>An immersive platform designed to help you learn Modern Standard Arabic through engaging lessons, flashcards, quizzes, and writing practice.</p>
+            <div class="hero-cta">
+                <a href="#lessons" class="btn btn-primary">Start Learning</a>
+                <a href="#features" class="btn btn-outline">Explore Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Learn With Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>Pronunciation Guide</h3>
+                    <p>Learn correct pronunciation with audio examples from native speakers for each word and phrase.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Spaced Repetition</h3>
+                    <p>Our algorithm optimizes your review schedule to help you retain vocabulary long-term.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with detailed statistics and personalized recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section class="lessons section" id="lessons">
+        <div class="container">
+            <h2 class="section-title">Arabic Learning Modules</h2>
+            <div class="lessons-grid">
+                <!-- Lesson cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Flashcards Section -->
+    <section class="flashcards section" id="flashcards">
+        <div class="container">
+            <h2 class="section-title">Vocabulary Flashcards</h2>
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-front">
+                        <div class="flashcard-word" id="englishWord">Hello</div>
+                        <div class="flashcard-hint">Click to flip</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-arabic" id="arabicWord">مرحبا</div>
+                        <div class="flashcard-details">
+                            <div class="flashcard-pronunciation" id="pronunciation">marhaba</div>
+                            <div class="flashcard-example" id="example">مرحبا، كيف حالك؟ (Hello, how are you?)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button class="btn btn-icon" id="prevCard">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="btn btn-primary" id="flipCard">
+                        <i class="fas fa-sync-alt"></i> Flip Card
+                    </button>
+                    <button class="btn btn-icon" id="nextCard">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="flashcard-progress">
+                    <span id="currentCard">1</span> of <span id="totalCards">10</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="flashcardProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">Knowledge Check</h2>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span id="question-count">Question 1 of 5</span>
+                    <span id="score">Score: 0</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="quizProgress"></div>
+                    </div>
+                </div>
+                <div class="quiz-content">
+                    <div class="question-container">
+                        <div class="question" id="question">What does "مرحبا" mean?</div>
+                        <div class="options" id="options">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="quiz-controls">
+                        <button class="btn btn-primary" id="nextQuestion" disabled>Next</button>
+                    </div>
+                    <div class="result-container" id="resultContainer">
+                        <h3>Quiz Completed!</h3>
+                        <div class="score-circle">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="score-text" id="finalScore">0%</div>
+                        </div>
+                        <div class="quiz-feedback" id="quizFeedback"></div>
+                        <button class="btn btn-primary" id="restartQuiz">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Practice Section -->
+    <section class="writing section" id="writing">
+        <div class="container">
+            <h2 class="section-title">Writing Practice</h2>
+            <div class="writing-container">
+                <div class="letter-display">
+                    <div class="arabic-letter" id="currentLetter">ا</div>
+                    <div class="letter-info">
+                        <div class="letter-name" id="letterName">Alif</div>
+                        <div class="letter-pronunciation" id="letterPronunciation">/ʔaː/</div>
+                    </div>
+                </div>
+                
+                <div class="letter-grid">
+                    <!-- Letters will be populated by JavaScript -->
+                </div>
+                
+                <div class="canvas-container">
+                    <canvas id="writingCanvas" width="600" height="300"></canvas>
+                    <div class="canvas-controls">
+                        <button class="btn btn-outline" id="clearCanvas">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                        <div class="brush-size">
+                            <label>Brush Size:</label>
+                            <input type="range" id="brushSize" min="1" max="20" value="3">
+                        </div>
+                        <div class="color-picker">
+                            <label>Color:</label>
+                            <input type="color" id="inkColor" value="#000000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="progress-section section" id="progress">
+        <div class="container">
+            <h2 class="section-title">Your Learning Progress</h2>
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="wordsLearned">0</div>
+                    <div class="stat-label">Words Learned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="lessonsCompleted">0</div>
+                    <div class="stat-label">Lessons Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="streakDays">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+            </div>
+            <div class="progress-chart">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Welcome Back!</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="auth-links">
+                <a href="#">Forgot password?</a>
+                <a href="#">Create account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <i class="fas fa-language"></i>
+                        <span>ArabicMaster Pro</span>
+                    </div>
+                    <p>An interactive platform for learning Modern Standard Arabic, designed to make language learning engaging and effective.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#lessons">Lessons</a></li>
+                        <li><a href="#flashcards">Flashcards</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                        <li><a href="#writing">Writing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@arabicmaster.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 ArabicMaster Pro. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
